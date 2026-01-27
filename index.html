@@ -17,58 +17,85 @@
 </head>
 <body>
     <main>
-        <section>
-            <header class="header-div">
-                <div class="title">
-                    <p>The Worst Day Ever - a poem</p>
-                </div>
-                <div class="perspective">
-                    <h1 class="rightside">Changing<br>
-                    <span class="italic">Perspective</span>
-                    <br>
-                    <img src="./images/face-intro1.svg" width="60"></h1>
+      
+<div id="controls">
+  <article id="article" class="hide">
+    <h1>Wobble Text Generator</h1>
+    <p>Some wobbly text.</p>
+    <p>Hotdog because of the hot weather rn 💦</p>
+    <p>
+      Doesn't work in Safari (tho shows to work in the Canvas Inspector so
+      idk what that's all about 🤷‍♂️)
+    </p>
+    <p>Part of a series of works started in June, 2019.</p>
+    <a
+      href="https://instagram.com/2xAA"
+      target="_blank"
+      rel="noopener nofollow noreferrer"
+      >Instagram</a
+    >
+    ×
+    <a
+      href="https://twitter.com/_2xAA"
+      target="_blank"
+      rel="noopener nofollow noreferrer"
+      >Twitter</a
+    >
+    ×
+    <a
+      href="https://wray.pro"
+      target="_blank"
+      rel="noopener nofollow noreferrer"
+      >wray.pro</a
+    >
+  </article>
+  <input type="text" id="text" />
+  <input type="text" id="font" />
+  <label
+    ><input
+      type="range"
+      min="0"
+      max="1"
+      step="0.001"
+      id="wobble-length"
+    /><span>Wobble Length</span></label
+  >
+  <label
+    ><input type="range" min="0" max="100" id="wobble-width" /><span
+      >Wobble Width</span
+    ></label
+  >
+  <label
+    ><input type="range" min="0" max="1" step="0.001" id="cut-start" /><span
+      >Slice Start</span
+    ></label
+  >
+  <label
+    ><input
+      type="range"
+      min=".01"
+      max="1"
+      step="0.001"
+      id="cut-height"
+    /><span>Slice Height</span></label
+  >
+  <label
+    ><input type="color" id="background-color" /><span
+      >Background Colour</span
+    ></label
+  ><br />
+  <label
+    ><input type="color" id="foreground-color" /><span
+      >Foreground Colour</span
+    ></label
+  ><br />
+  <div class="checkbox">
+    <input type="checkbox" id="use-hdpi" />
+    <label class="checkbox" for="use-hdpi"><span>Use HDPI (can be slow)</span></label>
+  </div>
+</div>
 
-                    <hr>
-                    <h1 class="upsidedown">Changing<br>
-                    <span class="italic">Perspective</span>
-                    <br>
-                    <img src="./images/face-intro2.svg" width="60">
-            </h1>
-                    
-                </div>
-            </header>
-        </section>
-        <section class="quotebox1">
-            <div class="quote-scroll">
-                <h2 class="quote1">"Take a look at your perspective."</h2>
-            </div>
-        </section>
-        <section>
-            <div class="quotebox2">
-                <div class="quote-scroll-white">
-                    <h2 class="quote2 wow delay-1s fadeIn">"Take a look at your perspective."</h2>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="quotebox3">
-                <div class="quote-scroll3">
-                    <h2 class="quote3 wow delay-1s fadeIn">"Take a look at your perspective."</h2>
-                </div>
-            </div>
-        </section>
-        <section class="page1-3">
-            <div class="terrible-box">
-                <a class="terrible" href='page2.html'>Terrible!</a>
-            </div>
-            <div class="cursor-section">
-                <div class="question-left"></div>
-                <div class="question-right"></div>
-            </div>
-            <div class="great-box">
-                <a class="great" href='page3.html'>Great!</a>
-            </div>
-        </section>
+<button id="about">About?</button>
     </main>
   
     <script src="scripts/wow.min.js">
