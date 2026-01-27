@@ -3,16 +3,16 @@ $(function() {
   // Your Code from here on down. Don't delete that line above!
   ////////////////////////////////////////////////////////////////Perspective Script
 let text = 'HOTDOG'
-let font = 'Six Caps, Proxima Nova, sans-serif'
-let wobbleLength = 0.593
-let cutStart = 0.531
-let wobbleWidth = 6
+let font = 'Modak, sans-serif'
+let wobbleLength = 0.9
+let cutStart = 0.510
+let wobbleWidth = 30
 let useHDPI = false
 let dpr = 1
-let cutHeight = 0.01
+let cutHeight = 0.30
 let cutSpacing = 0.01
 
-let backgroundColor = '#FFFB00'
+let backgroundColor = '#FFCE1B'
 let textColor = '#FF2600'
 
 const article = document.getElementById('article')
@@ -180,7 +180,7 @@ function loop(delta) {
 }
 
 async function start() {
-  await document.fonts.load('10pt "Six Caps"')
+  await document.fonts.load('12pt "Modak"')
   resize()
   requestAnimationFrame(loop)
 }

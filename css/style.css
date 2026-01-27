@@ -1,78 +1,20 @@
 /*------------Type---------------*/
+.badeen-display-regular {
+  font-family: "Badeen Display", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 
-h1 {
-  font-family: farnham-display, serif;
+.modak-regular {
+  font-family: "Modak", system-ui;
   font-weight: 400;
   font-style: normal;
-  font-size: 80px;
-  text-align: center;
 }
-.italic {
-  font-family: farnham-display, serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 30px;
-  text-align: center;
-}
-h2 {
-  font-family: farnham-display, serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 30px;
-}
-.bold {
-  font-family: trade-gothic-next, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 30px;
-}
-.h2-italic {
-  font-family: farnham-display, serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 30px;
-  text-align: center;
-}
-h3 {
-  font-family: farnham-display, serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 40px;
-  line-height: 1em;
-  text-align: center;
-}
-h4 {
-  font-family: trade-gothic-next, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 40px;
-}
-h5 {
-  font-family: farnham-display, serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 60px;
-  color: #FF8900;
-  line-height: 1em;
-}
-.good-h5 {
-  font-style: normal;
-  /*text-decoration:underline  #3333FF;*/
-  ;
-}
-p {
-  font-family: trade-gothic-next-condensed, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-  writing-mode: vertical-lr;
-  text-align: center;
-}
+
 /*-----------PAGE ONE----------------*/
 
 /*-----------section 1----*/
-@import url('https://fonts.googleapis.com/css?family=Six+Caps&display=swap');
-@import url('https://v36p9.codesandbox.io/style.css');
+
 
 html,
 body {
@@ -121,6 +63,46 @@ article {
 .hide {
   display: none;
 }
+
+
+/*
+body {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+*/
+.spinner {
+  animation: Rotate 5.4s both infinite;
+}
+.path {
+  animation: DrawLine 1.6s;
+  fill: none;
+  stroke: #FF2600;
+  stroke-width: 50;
+}
+@keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes DrawLine {
+  0% {
+    stroke-dasharray: 0 126;
+  }
+  100% {
+    stroke-dasharray: 126 126;
+  }
+}
+
+
 
 /*-----------section 2----*/
 
