@@ -167,9 +167,11 @@ body.dark .toggle-svg {
 .spinner {
   position: relative;
   z-index: 2;
+   color: currentColor;
+    animation: Rotate 9.4s linear infinite;
   display: block;
-  fill: currentColor; /* inherits from body */
-  animation: Rotate 9.4s linear infinite;
+    color: #FF2600;
+
 }
 
 
@@ -177,20 +179,23 @@ body.dark .spinner {
   color: #FFCE1B;
 }
 
-/* Rotating Text */
+
 
 #rotatingtext {
   fill: currentColor;
 }
 
-/* Rotating Text Path */
+
 
 .path {
+  stroke: currentColor;
   stroke-width: 6;
   fill: none;
 }
 
-
+#rotatingtext {
+  fill: currentColor;
+}
 
 
 @keyframes Rotate {

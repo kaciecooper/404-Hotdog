@@ -18,7 +18,11 @@ let cutSpacing = 0.01
 let backgroundColor = '#FFCE1B'
 let textColor = '#FF2600'
 
-
+const article = document.getElementById('article')
+const aboutButton = document.getElementById('about')
+aboutButton.addEventListener('click', () => {
+  article.classList.toggle('hide')
+})
 
 const canvas = document.createElement('canvas')
 const context = canvas.getContext('2d')
