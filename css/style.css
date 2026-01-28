@@ -85,12 +85,14 @@ body.dark .bottle-svg {
 
 
 canvas {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
+    inset: 0;
+
   pointer-events: none;
 }
 #controls {
@@ -165,11 +167,9 @@ body.dark .toggle-svg {
 .spinner {
   position: relative;
   z-index: 2;
-   color: currentColor;
-    animation: Rotate 9.4s linear infinite;
   display: block;
-    color: #FF2600;
-
+  fill: currentColor; /* inherits from body */
+  animation: Rotate 9.4s linear infinite;
 }
 
 
@@ -177,23 +177,20 @@ body.dark .spinner {
   color: #FFCE1B;
 }
 
-
+/* Rotating Text */
 
 #rotatingtext {
   fill: currentColor;
 }
 
-
+/* Rotating Text Path */
 
 .path {
-  stroke: currentColor;
   stroke-width: 6;
   fill: none;
 }
 
-#rotatingtext {
-  fill: currentColor;
-}
+
 
 
 @keyframes Rotate {

@@ -2,6 +2,9 @@
 $(function() {
   // Your Code from here on down. Don't delete that line above!
   ////////////////////////////////////////////////////////////////Perspective Script
+
+
+
 let text = 'HOTDOG'
 let font = 'Modak, sans-serif'
 let wobbleLength = 0.9
@@ -12,14 +15,13 @@ let dpr = 1
 let cutHeight = 0.30
 let cutSpacing = 0.01
 
+
+
+
 let backgroundColor = '#FFCE1B'
 let textColor = '#FF2600'
 
-const article = document.getElementById('article')
-const aboutButton = document.getElementById('about')
-aboutButton.addEventListener('click', () => {
-  article.classList.toggle('hide')
-})
+
 
 const canvas = document.createElement('canvas')
 const context = canvas.getContext('2d')
