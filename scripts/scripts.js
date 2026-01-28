@@ -12,6 +12,9 @@ let dpr = 1
 let cutHeight = 0.30
 let cutSpacing = 0.01
 
+
+
+
 let backgroundColor = '#FFCE1B'
 let textColor = '#FF2600'
 
