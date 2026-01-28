@@ -28,6 +28,13 @@ let squeezeCount = 0;
 const spinnerTextEl = document.getElementById("spinnerText");
 
 
+const maxLiquidOffset = 0;     // full (top position)
+const minLiquidOffset = 28;    // empty (bottom position)
+const liquidStep = 4;          // movement per click
+
+let liquidOffset = maxLiquidOffset;
+
+const liquidLine = document.querySelector(".liquid-line");
 
 const canvas = document.createElement('canvas')
 const context = canvas.getContext('2d')
@@ -48,7 +55,7 @@ function drawText() {
 
   let fontSize;
   if (isMobile) {
-    fontSize = Math.min(width, height) * 0.22;
+    fontSize = Math.min(width, height) * 0.15;
   } else {
     fontSize = 200 * dpr;
   }
@@ -254,7 +261,30 @@ themeToggle.addEventListener("click", () => {
       spinnerTextEl.textContent = "Frankly, we can’t find this page.";
     }
   }
+
+  // 💧 Drain liquid on each click
+if (liquidLine) {
+  liquidOffset = Math.min(
+    liquidOffset + liquidStep,
+    minLiquidOffset
+  );
+
+  liquidLine.style.setProperty(
+    "--liquid-offset",
+    `${liquidOffset}px`
+  );
+}
+if (liquidLine) {
+  liquidLine.classList.remove("glug");
+
+  // force reflow so animation retriggers
+  void liquidLine.offsetWidth;
+
+  liquidLine.classList.add("glug");
+}
 });
+
+
 
 
 start()
