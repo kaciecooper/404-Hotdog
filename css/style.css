@@ -118,11 +118,7 @@ article {
   text-align: center
 }
 
-/* Dark theme */
-body.dark {
-  background-color: #111111;
-  color: #ffffff;
-}
+
 
 /* Button reset */
 .svg-button {
@@ -183,7 +179,8 @@ body.dark .spinner {
 
 .path {
   stroke: currentColor;
-   
+  stroke-width: 6;
+  fill: none;
 }
 
 #rotatingtext {
@@ -192,12 +189,10 @@ body.dark .spinner {
 
 
 
-body.dark .spinner {
-  color: #FFCE1B;
-}
-
 .path {
   stroke: currentColor;
+  stroke-width: 6;
+  fill: none;
 }
 
 #rotatingtext {
