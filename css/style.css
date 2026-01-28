@@ -13,35 +13,86 @@
 
 /*-----------PAGE ONE----------------*/
 /*-----------section 1----*/
+
+
 body {
-  height: 100%;
+  margin: 0;
+  height: 100vh;
+   background: #FFCE1B;   /* light bg */
+  color: #FF2600;        /* light text */
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: #FFCE1B;
+  font-family: system-ui, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+body.dark {
+  background: #FF2600;
+  color: #FFCE1B;
+}
+
+
+/* ---------- BOTTLE BUTTON ---------- */
+
+#themeToggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 120px;
+  height: 120px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bottle-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #FF2600;
+  transition: color 0.4s ease;
+}
+
+body.dark .bottle-svg {
+  color: #FFCE1B;
+}
+
+.bottle-svg path {
+  fill: currentColor;
+}
+
+
 .spinningdog {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
-  /* Centers horizontally along the main axis */
   align-items: center;
-  /* Centers vertically along the cross axis */
   height: 40vh;
-  /* Example: Centers in the full viewport height */
 }
 
 #rotatingtext {
   font-family: "Poppins", serif;
   font-size: 15px;
   font-weight: 300;
-  fill: #FF2600;
+    fill: currentColor;
   transform-origin: center;
   transform-box: fill-box;
   animation: spin 12s linear infinite;
 }
 
-canvas,
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
 #controls {
   position: absolute;
 }
@@ -116,15 +167,43 @@ body.dark .toggle-svg {
 }
 
 .spinner {
-  animation: Rotate 9.4s both infinite;
+  position: relative;
+  z-index: 2;
+  color: #FF2600; /* light mode */
+    animation: Rotate 9.4s linear infinite;
+  display: block;
+    color: #FF2600;
+
+}
+
+
+body.dark .spinner {
+  color: #FFCE1B;
 }
 
 .path {
-  animation: DrawLine 1.6s;
-  fill: none;
-  stroke: #FF2600;
-  stroke-width: 50;
+  stroke: currentColor;
+   
 }
+
+#rotatingtext {
+  fill: currentColor;
+}
+
+
+
+body.dark .spinner {
+  color: #FFCE1B;
+}
+
+.path {
+  stroke: currentColor;
+}
+
+#rotatingtext {
+  fill: currentColor;
+}
+
 
 @keyframes Rotate {
   0% {

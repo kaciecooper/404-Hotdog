@@ -185,6 +185,22 @@ async function start() {
   requestAnimationFrame(loop)
 }
 
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    backgroundColor = "#FF2600";
+    textColor = "#FFCE1B";
+  } else {
+    backgroundColor = "#FFCE1B";
+    textColor = "#FF2600";
+  }
+
+  drawText(); // redraw canvas text with new color
+});
+
 start()
 
   //////////////////////////////////////////////////////////////////////////
