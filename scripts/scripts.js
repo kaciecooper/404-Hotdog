@@ -33,7 +33,7 @@ function drawText() {
   textContext.fillStyle = textColor
   textContext.textBaseline = 'middle'
   textContext.textAlign = 'center'
-  textContext.font = `${'normal'} ${128 * dpr}px ${font}`
+  textContext.font = `${'normal'} ${200 * dpr}px ${font}`
   textContext.fillText(text, width / 2 + 5 / 2, height / 2, width - 20 * dpr)
 }
 

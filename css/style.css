@@ -11,21 +11,40 @@
   font-style: normal;
 }
 
+
 /*-----------PAGE ONE----------------*/
 
 /*-----------section 1----*/
 
 
-html,
 body {
-  height: 100%;
+   height: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #FFCE1B;
 }
 
-body {
-  position: relative;
-  overflow: hidden;
-  margin: 0;
+.spinningdog {
+    display: flex;
+    justify-content: center; /* Centers horizontally along the main axis */
+    align-items: center;     /* Centers vertically along the cross axis */
+    height: 40vh;           /* Example: Centers in the full viewport height */
 }
+
+#rotatingtext {
+  font-family: "Poppins", serif;
+  font-size: 15px;
+  font-weight: 300;
+  fill: #FF2600;
+
+
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: spin 12s linear infinite;
+}
+
+
 
 canvas,
 #controls {
@@ -65,19 +84,8 @@ article {
 }
 
 
-/*
-body {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
-*/
 .spinner {
-  animation: Rotate 5.4s both infinite;
+  animation: Rotate 9.4s both infinite;
 }
 .path {
   animation: DrawLine 1.6s;
