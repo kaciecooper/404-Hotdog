@@ -16,10 +16,7 @@ let backgroundColor = '#FFCE1B'
 let textColor = '#FF2600'
 
 const article = document.getElementById('article')
-const aboutButton = document.getElementById('about')
-aboutButton.addEventListener('click', () => {
-  article.classList.toggle('hide')
-})
+
 
 const canvas = document.createElement('canvas')
 const context = canvas.getContext('2d')
@@ -127,6 +124,19 @@ window.addEventListener('resize', resize)
 let raf
 cancelAnimationFrame(raf)
 
+function applyTheme(isDark) {
+  if (isDark) {
+    document.body.classList.add("dark");
+    backgroundColor = "#FF2600";
+    textColor = "#FFCE1B";
+  } else {
+    document.body.classList.remove("dark");
+    backgroundColor = "#FFCE1B";
+    textColor = "#FF2600";
+  }
+
+  drawText(); // redraw text canvas with correct color
+}
 function loop(delta) {
   raf = requestAnimationFrame(loop)
   const { width, height } = canvas
@@ -180,11 +190,27 @@ function loop(delta) {
 }
 
 async function start() {
-  await document.fonts.load('12pt "Modak"')
-  resize()
-  requestAnimationFrame(loop)
+  await document.fonts.load('12pt "Modak"');
+  resize();
+  applyTheme(false); // ← REQUIRED
+  requestAnimationFrame(loop);
 }
 
+const toggleButton = document.getElementById("themeToggle");
+
+let isDark = false;
+
+toggleButton.addEventListener("click", () => {
+  isDark = !isDark;
+  applyTheme(isDark);
+});
+
+let baseSpeed = 0.01;
+
+window.addEventListener("scroll", () => {
+  const scrollFactor = window.scrollY / window.innerHeight;
+  rotationSpeed = baseSpeed + scrollFactor * 0.03;
+});
 start()
 
   //////////////////////////////////////////////////////////////////////////

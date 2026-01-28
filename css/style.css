@@ -16,13 +16,29 @@
 
 /*-----------section 1----*/
 
-
+/*
 body {
    height: 100%;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background: #FFCE1B;
+}
+
+*/
+
+
+body {
+  height: 100vh;
+  background: #FFCE1B;        /* light bg */
+  color: #FF2600;             /* light text */
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Dark mode */
+body.dark {
+  background: #FF2600;
+  color: #FFCE1B;
 }
 
 .spinningdog {
@@ -32,11 +48,17 @@ body {
     height: 40vh;           /* Example: Centers in the full viewport height */
 }
 
+
+.spinningdog {
+  position: relative;
+  z-index: 2;
+}
+
 #rotatingtext {
   font-family: "Poppins", serif;
   font-size: 15px;
   font-weight: 300;
-  fill: #FF2600;
+  fill: currentColor;
 
 
   transform-origin: center;
@@ -49,6 +71,14 @@ body {
 canvas,
 #controls {
   position: absolute;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 #controls {
@@ -72,6 +102,35 @@ article {
   text-align: center
 }
 
+/* ---------------- BOTTLE BUTTON ---------------- */
+
+.svg-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 3;
+}
+
+/* Bottle SVG */
+.bottle-svg {
+  fill: #FF2600; /* light mode bottle */
+  transition: fill 0.1s ease, transform 0.3s ease;
+}
+
+/* Bottle in dark mode */
+body.dark .bottle-svg {
+  fill: #FFCE1B;
+}
+
+.svg-button:hover .bottle-svg {
+  transform: scale(1.08);
+}
+
+
 #about {
   position: absolute;
   right: 10px;
@@ -90,7 +149,7 @@ article {
 .path {
   animation: DrawLine 1.6s;
   fill: none;
-  stroke: #FF2600;
+ stroke: currentColor;
   stroke-width: 50;
 }
 @keyframes Rotate {
@@ -109,6 +168,7 @@ article {
     stroke-dasharray: 126 126;
   }
 }
+
 
 
 
