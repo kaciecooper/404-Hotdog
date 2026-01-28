@@ -11,74 +11,39 @@
   font-style: normal;
 }
 
-
 /*-----------PAGE ONE----------------*/
-
 /*-----------section 1----*/
-
-/*
 body {
-   height: 100%;
+  height: 100%;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background: #FFCE1B;
 }
 
-*/
-
-
-body {
-  height: 100vh;
-  background: #FFCE1B;        /* light bg */
-  color: #FF2600;             /* light text */
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-/* Dark mode */
-body.dark {
-  background: #FF2600;
-  color: #FFCE1B;
-}
-
 .spinningdog {
-    display: flex;
-    justify-content: center; /* Centers horizontally along the main axis */
-    align-items: center;     /* Centers vertically along the cross axis */
-    height: 40vh;           /* Example: Centers in the full viewport height */
-}
-
-
-.spinningdog {
-  position: relative;
-  z-index: 2;
+  display: flex;
+  justify-content: center;
+  /* Centers horizontally along the main axis */
+  align-items: center;
+  /* Centers vertically along the cross axis */
+  height: 40vh;
+  /* Example: Centers in the full viewport height */
 }
 
 #rotatingtext {
   font-family: "Poppins", serif;
   font-size: 15px;
   font-weight: 300;
-  fill: currentColor;
-
-
+  fill: #FF2600;
   transform-origin: center;
   transform-box: fill-box;
   animation: spin 12s linear infinite;
 }
 
-
-
 canvas,
 #controls {
   position: absolute;
-}
-
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  pointer-events: none;
 }
 
 #controls {
@@ -102,8 +67,13 @@ article {
   text-align: center
 }
 
-/* ---------------- BOTTLE BUTTON ---------------- */
+/* Dark theme */
+body.dark {
+  background-color: #111111;
+  color: #ffffff;
+}
 
+/* Button reset */
 .svg-button {
   background: none;
   border: none;
@@ -112,24 +82,27 @@ article {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  z-index: 3;
+  z-index: 100;
 }
 
-/* Bottle SVG */
-.bottle-svg {
-  fill: #FF2600; /* light mode bottle */
-  transition: fill 0.1s ease, transform 0.3s ease;
+/* SVG styling */
+.toggle-svg {
+  width: 90px;
+  height: auto;
+  fill: #111111;
+  /* SVG color (light mode) */
+  transition: fill 0.4s ease, transform 0.3s ease;
 }
 
-/* Bottle in dark mode */
-body.dark .bottle-svg {
-  fill: #FFCE1B;
+/* SVG color in dark mode */
+body.dark .toggle-svg {
+  fill: #ffffff;
 }
 
-.svg-button:hover .bottle-svg {
-  transform: scale(1.08);
+/* Hover interaction */
+.svg-button:hover .toggle-svg {
+  transform: scale(1.07);
 }
-
 
 #about {
   position: absolute;
@@ -142,38 +115,38 @@ body.dark .bottle-svg {
   display: none;
 }
 
-
 .spinner {
   animation: Rotate 9.4s both infinite;
 }
+
 .path {
   animation: DrawLine 1.6s;
   fill: none;
- stroke: currentColor;
+  stroke: #FF2600;
   stroke-width: 50;
 }
+
 @keyframes Rotate {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 @keyframes DrawLine {
   0% {
     stroke-dasharray: 0 126;
   }
+
   100% {
     stroke-dasharray: 126 126;
   }
 }
 
-
-
-
 /*-----------section 2----*/
-
 .page3-2 {
   display: grid;
   grid-template-columns: 1fr;
@@ -183,37 +156,46 @@ body.dark .bottle-svg {
   -webkit-animation: page3-1 20s infinite;
   animation: page3-1 20s infinite;
 }
+
 @-webkit-keyframes page3-1 {
   0% {
     background-position: 56% 0%;
   }
+
   50% {
     background-position: 45% 100%;
   }
+
   100% {
     background-position: 56% 0%;
   }
 }
+
 @keyframes page3-1 {
   0% {
     background-position: 56% 0%;
   }
+
   50% {
     background-position: 45% 100%;
   }
+
   100% {
     background-position: 56% 0%;
   }
 }
+
 .beyond-div {
   margin: auto;
   margin-top: -60px;
 }
+
 .white-wave3 {
   z-index: -10;
   position: relative;
   margin: auto;
 }
+
 .million-div {
   margin: auto;
   margin-top: -500px;
@@ -221,8 +203,8 @@ body.dark .bottle-svg {
   padding-bottom: 100px;
   border-bottom: solid 1px black;
 }
-/*-----------section 3----*/
 
+/*-----------section 3----*/
 .page3-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -230,10 +212,12 @@ body.dark .bottle-svg {
   width: 100%;
   line-height: 6em;
 }
+
 .good-face-blue {
   margin: auto;
   width: 100%;
 }
+
 .attitude-div {
   margin: auto;
   padding-left: 50px;
@@ -241,12 +225,13 @@ body.dark .bottle-svg {
   border-left: solid 2px #3333FF;
   border-right: solid 2px #3333FF;
 }
+
 .good-face {
   width: 100%;
   margin: auto;
 }
-/*-----------section 4----*/
 
+/*-----------section 4----*/
 .page3-4 {
   display: grid;
   grid-template-columns: 10% 90%;
@@ -259,39 +244,49 @@ body.dark .bottle-svg {
   -moz-animation: AnimationName 10s infinite;
   animation: AnimationName 10s infinite;
 }
+
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 4% 0%;
   }
+
   50% {
     background-position: 97% 100%;
   }
+
   100% {
     background-position: 4% 0%;
   }
 }
+
 @-moz-keyframes AnimationName {
   0% {
     background-position: 4% 0%;
   }
+
   50% {
     background-position: 97% 100%;
   }
+
   100% {
     background-position: 4% 0%;
   }
 }
+
 @keyframes AnimationName {
   0% {
     background-position: 4% 0%;
   }
+
   50% {
     background-position: 97% 100%;
   }
+
   100% {
     background-position: 4% 0%;
   }
 }
+
 .pg3-4-text {
   background-image: url("../images/blue-wave-background.svg");
   background-repeat: no-repeat;
@@ -300,37 +295,44 @@ body.dark .bottle-svg {
   z-index: 0;
   border-left-width: 1px;
   border-left-style: solid;
-  border-image: linear-gradient( to bottom, #3333FF, rgba(255, 255, 255, 1)) 1 100%;
+  border-image: linear-gradient(to bottom, #3333FF, rgba(255, 255, 255, 1)) 1 100%;
 }
+
 .pink-text {
   padding: 40px;
   z-index: 2;
 }
+
 .only-if {
   margin-top: 30%;
   padding-left: 40px;
 }
+
 .blue-wave1 {
   width: 100%;
 }
+
 .blue-wave2 {
   width: 100%;
 }
+
 .happiness-text {
   padding: 40px;
 }
+
 .pg3-5-because {
   padding-top: 300px;
   padding-left: 40px;
 }
-/*-----------section 6----*/
 
+/*-----------section 6----*/
 .page3-6 {
   display: grid;
   grid-template-columns: 10% 90%;
   width: 100%;
   height: 80vh;
 }
+
 .pg3-6-text {
   color: #FF8900;
   line-height: 4em;
@@ -338,37 +340,42 @@ body.dark .bottle-svg {
   padding: 40px;
   border-left-width: 1px;
   border-left-style: solid;
-  border-image: linear-gradient( to bottom, rgba(255, 255, 255, 0), #FF8900) 1 100%;
+  border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #FF8900) 1 100%;
 }
+
 .good-face-arrow {
   margin: auto;
   width: 100%;
   padding-top: 40px;
 }
+
 .pg3-6-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 170px;
 }
+
 .pg3-6-line {
   border-right: solid 1px #FF8900;
 }
-/*-----------section 7----*/
 
+/*-----------section 7----*/
 .page3-7 {
   display: grid;
   grid-template-columns: 10% 90%;
   width: 100%;
   height: 80vh;
 }
+
 .pg3-7-text {
   background-image: url("../images/orange-wave1.svg");
   background-repeat: no-repeat;
   background-size: cover;
   border-left-width: 1px;
   border-left-style: solid;
-  border-image: linear-gradient( to bottom, #FF8900, rgba(255, 255, 255, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, #FF8900, rgba(255, 255, 255, 0)) 1 100%;
 }
+
 .even-if {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -376,10 +383,12 @@ body.dark .bottle-svg {
   margin: auto;
   width: 100%;
 }
+
 .pg3-badplace {
   border-left: solid 1px #FF8900;
   padding: 40px;
 }
+
 .pg3-7-because-div {
   display: grid;
   padding: 40px;
@@ -387,8 +396,8 @@ body.dark .bottle-svg {
   line-height: 3em;
   color: #fff;
 }
-/*-----------section 8----*/
 
+/*-----------section 8----*/
 .page3-8 {
   display: grid;
   grid-template-columns: 10% 90%;
@@ -396,18 +405,21 @@ body.dark .bottle-svg {
   width: 100%;
   cursor: url("../images/cursor-left-arrow.svg"), default;
 }
+
 .pg3-8-text {
   background-image: url("../images/orange-wave2.svg");
   background-repeat: no-repeat;
   background-size: cover;
   border-left-width: 1px;
   border-left-style: solid;
-  border-image: linear-gradient( to bottom, #FF8900, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, #FF8900, rgba(0, 0, 0, 0)) 1 100%;
 }
+
 .convince {
   padding: 40px;
   color: #fff;
 }
+
 .last-badday {
   padding-top: 40%;
   text-align: center;
@@ -419,18 +431,25 @@ body.dark .bottle-svg {
   font-size: 60px;
   color: #FF8900;
 }
-/*------------Links and Buttons---------------*/
 
-.great, .terrible, .reverse, .home-link :visited {
+/*------------Links and Buttons---------------*/
+.great,
+.terrible,
+.reverse,
+.home-link :visited {
   color: #000;
 }
+
 a:hover {
   color: gray;
 }
+
 .great a:hover {
   color: #FF8900;
 }
-.terrible, .home-link {
+
+.terrible,
+.home-link {
   font-family: trade-gothic-next-condensed, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -440,7 +459,9 @@ a:hover {
   z-index: 100;
   color: #000;
 }
-.great, .reverse {
+
+.great,
+.reverse {
   font-family: trade-gothic-next-condensed, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -450,31 +471,29 @@ a:hover {
   z-index: 100;
   color: #000;
 }
+
 .home-box {
   text-align: right;
   padding-top: 700px;
 }
+
 /*-----------LINES---------------------------*/
-
 /*------------Footer---------------*/
-
-
 /*------------Images---------------*/
-
 .sad-img {
   width: 100%;
   padding-top: 30px;
   margin: auto;
 }
+
 .down-arrow-img {
   width: 100%;
   margin: auto;
   padding-top: 20px;
 }
-/* -------------------Page 3  Animations---------------------------*/
 
+/* -------------------Page 3 Animations---------------------------*/
 /*---------Section1----------------*/
-
 #reveal-good {
   opacity: 1;
   -webkit-transform: scale(0.9);
@@ -483,6 +502,7 @@ a:hover {
   -o-transform: scale(0.9);
   transform: scale(0.9);
 }
+
 #reveal-good.visible {
   opacity: 0;
   -webkit-transform: none;
@@ -491,59 +511,73 @@ a:hover {
   -o-transform: none;
   transform: none;
 }
+
 /*------------------------------------------------*/
-
 /*-----------Media Queries---------------*/
-
 @media only screen and (max-width:1024px) {
   h2 {
     font-size: 25px;
   }
+
   .h2-italic {
     font-size: 40px;
   }
+
   h5 {
     font-size: 40px;
   }
+
   .page3-1 {
     display: grid;
     grid-template-columns: 10% 80% 10%;
   }
+
   .fading-text {
     font-size: 10px;
     line-height: .5em;
   }
-  .real-1, .real-2, .real-3 {
-    font-size: 15px; 
-}
 
-.page2-1 {
-  background-position: contain;
-}
-/*-----------section 2----*/
+  .real-1,
+  .real-2,
+  .real-3 {
+    font-size: 15px;
+  }
 
-.fading-text{
-  margin-top:400px;
-}
-.fade5, .fade6, .fade7, .fade8,.fade9,.fade10, .fade11, .fade12, .fade13, .fade14 {
-display:none;
-}
+  .page2-1 {
+    background-position: contain;
+  }
 
-.pg3-5-hr {
-  width: 80%;
- }
+  /*-----------section 2----*/
+  .fading-text {
+    margin-top: 400px;
+  }
 
-.white-wave1, .white-wave2, .white-wave3 {
- display:none;
-}
+  .fade5,
+  .fade6,
+  .fade7,
+  .fade8,
+  .fade9,
+  .fade10,
+  .fade11,
+  .fade12,
+  .fade13,
+  .fade14 {
+    display: none;
+  }
 
-.last-badday {
-  padding-top: 90%;
-}
+  .pg3-5-hr {
+    width: 80%;
+  }
 
+  .white-wave1,
+  .white-wave2,
+  .white-wave3 {
+    display: none;
+  }
+
+  .last-badday {
+    padding-top: 90%;
+  }
 
   @media only screen and (min-width: 1024px) {
-
-
-
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1200px) {  
