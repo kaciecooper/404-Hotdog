@@ -52,7 +52,30 @@ body.dark {
   height: 100%;
   display: block;
   color: #FF2600;
-  transition: color 0.4s ease;
+    transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+  transform-origin: center bottom;
+}
+
+
+/* Squeeze while clicking / tapping */
+.svg-button:active .bottle-svg {
+  transform: scaleX(1.08) scaleY(0.88) skewX(-2deg);
+}
+
+/* Optional: subtle rebound on release */
+.svg-button .bottle-svg {
+  will-change: transform;
+}
+
+
+.svg-button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.svg-button:active .bottle-svg {
+  transition-duration: 0.08s;
 }
 
 body.dark .bottle-svg {
@@ -62,6 +85,8 @@ body.dark .bottle-svg {
 .bottle-svg path {
   fill: currentColor;
 }
+
+
 
 
 .spinningdog {
@@ -190,7 +215,12 @@ body.dark .spinner {
   fill: none;
 }
 
-
+@keyframes liquid-glug {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(-2px); }
+  70%  { transform: translateY(1px); }
+  100% { transform: translateY(0); }
+}
 
 
 @keyframes Rotate {

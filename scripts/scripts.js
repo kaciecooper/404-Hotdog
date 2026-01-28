@@ -21,6 +21,12 @@ let cutSpacing = 0.01
 let backgroundColor = '#FFCE1B'
 let textColor = '#FF2600'
 
+// Bottle interaction count
+let squeezeCount = 0;
+
+// Spinner text element (SVG textPath)
+const spinnerTextEl = document.getElementById("spinnerText");
+
 
 
 const canvas = document.createElement('canvas')
@@ -222,6 +228,7 @@ async function start() {
 const themeToggle = document.getElementById("themeToggle");
 
 themeToggle.addEventListener("click", () => {
+  // Toggle theme (existing behavior)
   document.body.classList.toggle("dark");
 
   if (document.body.classList.contains("dark")) {
@@ -233,7 +240,22 @@ themeToggle.addEventListener("click", () => {
   }
 
   drawText(); // redraw canvas text with new color
+
+  // 👇 NEW: count bottle squeezes
+  squeezeCount++;
+
+  // 👇 NEW: update spinner text
+  if (spinnerTextEl) {
+    if (squeezeCount >= 5) {
+      spinnerTextEl.textContent = "Okay, okay — stop squeezing.";
+    } else if (squeezeCount >= 3) {
+      spinnerTextEl.textContent = "Still hungry?";
+    } else {
+      spinnerTextEl.textContent = "Frankly, we can’t find this page.";
+    }
+  }
 });
+
 
 start()
 
